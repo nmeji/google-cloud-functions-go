@@ -20,7 +20,7 @@ import (
 	"plugin"
 	"strings"
 
-	"github.com/kelseyhightower/google-cloud-functions-go/event"
+	"github.com/nmeji/google-cloud-functions-go/event"
 )
 
 func objectChangeHandler(f plugin.Symbol, data []byte) (string, error) {

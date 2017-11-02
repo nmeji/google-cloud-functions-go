@@ -184,7 +184,7 @@ exports.{{.EntryPoint}} = function {{.EntryPoint}}(event, callback) {
 
 const nodejsHTTPTemplate = `const spawnSync = require('child_process').spawnSync;
 
-exports.{{.EntryPoint}} = function {{.EntryPoint}}(req, res) {
+exports.{{.EntryPoint}} = (req, res) => {
   var requestBody;
 
   switch (req.get('content-type')) {
@@ -226,6 +226,7 @@ exports.{{.EntryPoint}} = function {{.EntryPoint}}(req, res) {
   }
 
   data = JSON.parse(result.stdout);
+	res.set(data.header);
   res.status(data.status_code);
   res.send(data.body);
 };

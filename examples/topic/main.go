@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/kelseyhightower/google-cloud-functions-go/event"
+	"github.com/nmeji/google-cloud-functions-go/event"
 )
 
 func F(e event.TopicPublish) (string, error) {
